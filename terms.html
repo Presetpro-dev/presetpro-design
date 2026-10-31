@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms · Presetpro Design</title>
+<meta name="description" content="The terms for Presetpro Design: Launch projects, two-week sprints, the monthly design plan, pausing, cancelling and who owns the work.">
+<link rel="canonical" href="https://design.presetpro.com/terms.html">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 560 560%22 aria-hidden=%22true%22 focusable=%22false%22%3E%3Cpath fill-rule=%22evenodd%22 fill=%22%23121216%22 d=%22M8 280A272 272 0 1 0 552 280A272 272 0 1 0 8 280Z M151 200 H212 L241 171 Q245 166 251 166 H309 Q315 166 319 171 L348 200 H409 Q422 200 422 213 V358 Q422 371 409 371 H151 Q138 371 138 358 V213 Q138 200 151 200 Z M214 283A66 66 0 1 0 346 283A66 66 0 1 0 214 283Z%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700;800&family=Funnel+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#f2f2f4; --paper:#ffffff; --paper-2:#f6f6f8; --ink:#121216; --ink-2:#6b6b74; --ink-3:#9b9ba4;
+  --line:#e2e2e8; --select:#1a6dff; --select-ink:#ffffff; --select-soft:#e7efff; --ok:#17955a;
+  --feature-bg:#121216; --feature-fg:#f5f5f7;
+  --shadow:0 1px 2px rgb(18 18 22 / .05), 0 10px 30px rgb(18 18 22 / .07);
+  --font-display:"Funnel Display", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:"Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:"Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --gutter:clamp(16px, 4vw, 40px);
+}
+[data-mode="dark"]{
+  --ground:#0b0b0d; --paper:#17171b; --paper-2:#111114; --ink:#f3f3f6; --ink-2:#a2a2ac; --ink-3:#6e6e78;
+  --line:#2a2a31; --select:#4a8bff; --select-ink:#ffffff; --select-soft:#14233f; --ok:#3ccf7e;
+  --feature-bg:#f3f3f6; --feature-fg:#121216;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light}
+[data-mode="dark"]{color-scheme:dark}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--select);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:calc(1180px + 2 * var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--ground) 80%, transparent);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid color-mix(in srgb, var(--line) 70%, transparent)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:56px}
+.logo{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font:700 17px/1 var(--font-display);letter-spacing:-.01em}
+.logo:hover{text-decoration:none}
+.logo .pm-mark{width:24px;height:24px;flex:none}
+.pm-word{display:inline-flex;align-items:baseline;white-space:nowrap}
+.nsel{position:relative;display:inline-block;margin-left:.48em;color:var(--ink-2)}
+.nsel-box{position:absolute;inset:-2px -4px;border:1.5px solid var(--select);pointer-events:none}
+.nsel-box i{position:absolute;width:6px;height:6px;box-sizing:border-box;background:var(--paper);border:1.5px solid var(--select)}
+.nsel-box .tl{left:-4px;top:-4px}.nsel-box .tr{right:-4px;top:-4px}.nsel-box .bl{left:-4px;bottom:-4px}.nsel-box .br{right:-4px;bottom:-4px}
+.back{color:var(--ink-2);font-size:14px;font-weight:500}
+.back:hover{color:var(--ink);text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 22px;border-radius:999px;border:0;font:600 15px/1 var(--font-body);cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{text-decoration:none}
+.btn-primary{background:var(--select);color:var(--select-ink)}
+.btn-primary:hover{background:color-mix(in srgb, var(--select) 88%, var(--ink))}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.h1{margin:0;font:600 clamp(2.4rem, 1.4rem + 4vw, 4rem)/1.02 var(--font-display);letter-spacing:-.035em}
+.h1 b{font-weight:600}
+.h1 span{color:var(--ink-3)}
+.lede{margin:18px 0 0;font-size:clamp(17px, 1.2vw + 12px, 20px);color:var(--ink-2);max-width:46ch}
+.eyebrow{margin:0 0 10px;font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.mono{font-family:var(--font-mono)}
+.foot{padding-block:64px 40px}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.foot-in nav{display:flex;gap:20px}
+.foot-in a{color:var(--ink-2)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom, 0px));z-index:80;translate:-50% 16px;opacity:0;max-width:calc(100vw - 32px);background:var(--feature-bg);color:var(--feature-fg);padding:12px 18px;border-radius:14px;font-size:14px;box-shadow:0 22px 44px rgb(18 18 22 / .2);transition:opacity .25s, translate .25s;pointer-events:none}
+.toast.show{opacity:1;translate:-50% 0}
+@media (prefers-reduced-motion: reduce){ .toast{transition:none} }
+
+.doc{display:grid;grid-template-columns:220px minmax(0, 720px);gap:56px;padding-block:clamp(40px, 7vw, 88px) 0}
+.toc{position:sticky;top:88px;align-self:start;font-size:14px}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{color:var(--ink-2)}
+.toc a::before{content:counter(t, decimal-leading-zero) "  ";font-family:var(--font-mono);font-size:12px;color:var(--ink-3)}
+.toc a:hover{color:var(--ink);text-decoration:none}
+.updated{margin:22px 0 0;font:500 13px/1 var(--font-mono);color:var(--ink-3)}
+.summary{margin:36px 0 0;padding:24px 26px;background:var(--paper);border-radius:20px;box-shadow:var(--shadow)}
+.summary h2{margin:0 0 12px;font:600 18px/1.2 var(--font-display);letter-spacing:-.01em}
+.summary ul{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--ink-2);font-size:16px}
+.terms section{padding-top:36px;scroll-margin-top:72px}
+.terms h2{margin:0 0 10px;font:600 22px/1.2 var(--font-display);letter-spacing:-.015em}
+.terms p,.terms li{color:var(--ink-2)}
+.terms p{margin:0 0 12px}
+.terms ul{margin:0 0 12px;padding-left:20px;display:grid;gap:6px}
+.terms strong{color:var(--ink);font-weight:600}
+@media (max-width: 860px){ .doc{grid-template-columns:1fr;gap:0} .toc{display:none} }
+</style>
+<script>(function () { var m = 'dark'; try { m = localStorage.getItem('us-mode') || 'dark'; } catch (e) {} if (m !== 'light') document.documentElement.setAttribute('data-mode', 'dark'); })();</script>
+</head>
+<body>
+<header class="nav"><div class="nav-in wrap"><a class="logo" href="./" aria-label="Presetpro Design home"><svg class="pm-mark" viewBox="0 0 560 560" aria-hidden="true" focusable="false"><path fill-rule="evenodd" style="fill:var(--ink)" d="M8 280A272 272 0 1 0 552 280A272 272 0 1 0 8 280Z M151 200 H212 L241 171 Q245 166 251 166 H309 Q315 166 319 171 L348 200 H409 Q422 200 422 213 V358 Q422 371 409 371 H151 Q138 371 138 358 V213 Q138 200 151 200 Z M214 283A66 66 0 1 0 346 283A66 66 0 1 0 214 283Z"/></svg><span class="pm-word"><span>Presetpro</span><span class="nsel"><span>Design</span><span class="nsel-box" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></span></span></span></a><a class="back" href="./">Back to the site</a></div></header>
+<main>
+<div class="wrap doc"><nav class="toc" aria-label="On this page"><ol><li><a href="#who">Who we are</a></li><li><a href="#launch">Launch projects</a></li><li><a href="#sprints">Sprints</a></li><li><a href="#design">The design plan</a></li><li><a href="#payment">Payment</a></li><li><a href="#board">Your board</a></li><li><a href="#revisions">Revisions</a></li><li><a href="#scope">What we design, and what we don&#39;t</a></li><li><a href="#pausing">Pausing</a></li><li><a href="#cancelling">Cancelling and refunds</a></li><li><a href="#ownership">Who owns the work</a></li><li><a href="#portfolio">Showing the work</a></li><li><a href="#your-materials">Your materials and privacy</a></li><li><a href="#ai">How we use AI</a></li><li><a href="#liability">Liability</a></li><li><a href="#changes">Changes to these terms</a></li><li><a href="#law">The law that applies</a></li></ol></nav><article class="terms"><p class="eyebrow">Presetpro Design</p><h1 class="h1"><b>Terms.</b> <span>The short version, then the details.</span></h1><p class="updated">Last updated October 28, 2026</p><div class="summary"><h2>In short</h2><ul><li>Launch: a fixed price and a launch date, agreed on one page.</li><li>Then two-week sprints. Pause or cancel after any sprint.</li><li>Design on its own: a monthly plan, one request at a time.</li><li>You set the order of the work on your board.</li><li>Everything we build is yours: code, accounts and design files.</li><li>Payment goes through FastSpring, our reseller.</li><li>A sprint or a month isn&#39;t refunded once it starts, because you can stop after any one.</li></ul></div><section id="who"><h2>Who we are</h2><p>Presetpro Design is a design and build studio run by Presetpro INC, based in South Bruce Peninsula, Ontario, Canada. Tim M., the founder, leads every project and is your contact. We may bring in designers or developers we trust for parts of a project; when we do, they work under these terms and we stay responsible for their work. When these terms say "we" or "us", they mean Presetpro INC. When they say "you", they mean the person or company that hires us.</p><p>By booking a Launch project, starting a sprint or joining the design plan, you agree to these terms. If anything is unclear, email <a href="mailto:contact@presetpro.com">contact@presetpro.com</a> before you start.</p></section><section id="launch"><h2>Launch projects</h2><p>A Launch project is a fixed-price first version of a web app or an iPhone app. Before any work starts we agree a one-page scope with you: what the first version does, the screens it has, the price, how and when you pay, and the launch date. What is in that scope is what Launch includes.</p><p>New ideas that come up during the build are welcome. We note them and plan them for after launch, or quote them separately, so the price and the date hold.</p><p>We build in your own accounts: the code, the database, the hosting and, for iPhone apps, your own Apple developer account. Their fees are yours to pay, including Apple&#39;s yearly developer fee. Whether an app is accepted on the App Store is Apple&#39;s decision, so we can&#39;t promise it, but we fix anything Apple flags that falls within the scope.</p><p>For 30 days after launch we fix, at no charge, anything we built that doesn&#39;t work as the scope describes.</p></section><section id="sprints"><h2>Sprints</h2><p>After a Launch project, or for an app you already have, you can keep building in sprints. A sprint is two weeks of design and build work, at the price shown when you start. Sprints renew every two weeks until you pause or cancel, and each one starts when the last one ends.</p><p>At the start of each sprint we agree on your board what it covers: the features, the fixes and the order. You can try a working build every week, and we show you a demo at the end. If something agreed for a sprint isn&#39;t finished by its end, it goes first in the next one. If you stop instead, we hand over the work as it stands.</p></section><section id="design"><h2>The design plan</h2><p>The design plan is design work on its own, billed monthly at the price shown when you join. It covers app and web screens, landing pages, pitch decks and brand work. Building isn&#39;t included; for that, start with Launch or a sprint.</p><p>You add requests to your board and we work on one at a time, in the order you set. Most requests come back within 48 hours, counted in business days; bigger ones are split into parts, and we tell you when. The plan renews every month until you pause or cancel.</p></section><section id="payment"><h2>Payment</h2><p>Payments are handled by FastSpring, our authorized reseller and merchant of record. FastSpring takes the payment, adds any sales tax or VAT that applies where you are, and sends your receipts. Your card statement will show FastSpring. FastSpring&#39;s own terms also apply to the payment itself.</p><p>If a sprint or design plan payment fails, work doesn&#39;t start until it goes through.</p></section><section id="board"><h2>Your board</h2><p>Features, fixes, ideas and design requests live on your private board, in the order you set. At the start of each sprint we agree which of them it covers. New ideas that come up mid-sprint go on the board for the next one, so the sprint you agreed holds.</p><p>Business days are Monday to Friday, not counting public holidays in Ontario.</p></section><section id="revisions"><h2>Revisions</h2><p>Within a sprint we revise what we are building until it does what we agreed, at no extra cost. A new direction or a new feature goes on your board for a future sprint. On the design plan we revise each request until it&#39;s right, then start the next one.</p></section><section id="scope"><h2>What we design, and what we don&#39;t</h2><p>We design and build web apps, and iPhone apps when a native app is the right next step, including the UX and UI and the brand pieces an app needs, like an icon or a landing page. Websites can be built in WordPress, Webflow or Framer. Android apps are planned on request.</p><p>The design plan covers design only, as described in its section above.</p><p>We don&#39;t do 3D modeling, long animated videos, or print documents over 30 pages, like books or catalogs. If you are not sure, ask before you start.</p><p>Some things cost money on top of Launch or a sprint, like hosting, domains, paid services, AI usage, font licenses and stock images. Those are yours to pay for, and we always ask before using anything that costs money.</p></section><section id="pausing"><h2>Pausing</h2><p>You can pause after any sprint by telling us on your board or at <a href="mailto:contact@presetpro.com">contact@presetpro.com</a> before the next one starts. The next sprint then doesn&#39;t start, so you aren&#39;t billed and we don&#39;t work on your board. There are no days to carry over, because each sprint is two weeks. Your board, code and files stay as they are.</p><p>On the design plan you can pause at the end of any month. The month you paid for runs to its end, then nothing is billed until you resume, and there are no days to carry over.</p></section><section id="cancelling"><h2>Cancelling and refunds</h2><p>You can cancel any time from your billing page, or by telling us. Cancelling stops the next sprint, or the next month of the design plan. What you have already paid for runs to its end, and everything we made stays yours.</p><p>A sprint or a month of the design plan isn&#39;t refunded once it starts, because you can stop after any one. A Launch project is paid as its scope says. If something isn&#39;t working, tell us and we will make it right. Nothing here takes away any rights you have under the consumer laws where you live.</p></section><section id="ownership"><h2>Who owns the work</h2><p>Everything we deliver to you is yours. Once it is delivered and paid for, you own the code, the final designs and their source files, with full rights to use, change and sell them, and to register them as trademarks.</p><p>Two things stay with their owners: fonts, stock photos and other third-party assets, which come under their own licenses, and our own tools, templates and know-how, which we keep using for other work.</p></section><section id="portfolio"><h2>Showing the work</h2><p>After your work is public, we may show it in our portfolio and on our channels. If you would rather we didn&#39;t, tell us and we won&#39;t. We are happy to sign an NDA when you need one.</p></section><section id="your-materials"><h2>Your materials and privacy</h2><p>When you send us logos, photos, text or other material, you confirm you have the right to use it. We use it only for your work and keep anything that isn&#39;t public confidential.</p><p>How we handle personal information is explained in our <a href="https://www.presetpro.com/privacy/">Privacy Policy</a>.</p></section><section id="ai"><h2>How we use AI</h2><p>Every design is made and checked by a person. We may use AI tools for research and to speed up parts of the build, but never to produce final artwork on its own.</p><p>When an app we build for you includes AI features, they run on your own account with the AI provider, and that provider&#39;s fees and terms apply.</p></section><section id="liability"><h2>Liability</h2><p>We do careful work, but we can&#39;t promise results like sales, sign-ups or search rankings. If something goes wrong, our total liability is limited to what you paid us in the three months before the claim, and we aren&#39;t responsible for indirect losses, like lost profits.</p></section><section id="changes"><h2>Changes to these terms</h2><p>We may update these terms. If we make a change that affects clients, we will email you at least 14 days before it takes effect.</p></section><section id="law"><h2>The law that applies</h2><p>These terms are governed by the laws of Ontario and the federal laws of Canada that apply there.</p></section></article></div>
+</main>
+<footer class="foot wrap"><div class="foot-in"><span>© 2026 Presetpro INC. A Presetpro Design page.</span><nav aria-label="Footer"><a href="./">Home</a><a href="terms.html">Terms</a><a href="https://www.presetpro.com/privacy/">Privacy</a><a href="mailto:contact@presetpro.com">contact@presetpro.com</a></nav></div></footer>
+<div class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

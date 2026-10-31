@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome · Presetpro Design</title>
+<meta name="description" content="Welcome to Presetpro Design: three steps to your first sprint, and the intake form.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 560 560%22 aria-hidden=%22true%22 focusable=%22false%22%3E%3Cpath fill-rule=%22evenodd%22 fill=%22%23121216%22 d=%22M8 280A272 272 0 1 0 552 280A272 272 0 1 0 8 280Z M151 200 H212 L241 171 Q245 166 251 166 H309 Q315 166 319 171 L348 200 H409 Q422 200 422 213 V358 Q422 371 409 371 H151 Q138 371 138 358 V213 Q138 200 151 200 Z M214 283A66 66 0 1 0 346 283A66 66 0 1 0 214 283Z%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700;800&family=Funnel+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#f2f2f4; --paper:#ffffff; --paper-2:#f6f6f8; --ink:#121216; --ink-2:#6b6b74; --ink-3:#9b9ba4;
+  --line:#e2e2e8; --select:#1a6dff; --select-ink:#ffffff; --select-soft:#e7efff; --ok:#17955a;
+  --feature-bg:#121216; --feature-fg:#f5f5f7;
+  --shadow:0 1px 2px rgb(18 18 22 / .05), 0 10px 30px rgb(18 18 22 / .07);
+  --font-display:"Funnel Display", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:"Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:"Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --gutter:clamp(16px, 4vw, 40px);
+}
+[data-mode="dark"]{
+  --ground:#0b0b0d; --paper:#17171b; --paper-2:#111114; --ink:#f3f3f6; --ink-2:#a2a2ac; --ink-3:#6e6e78;
+  --line:#2a2a31; --select:#4a8bff; --select-ink:#ffffff; --select-soft:#14233f; --ok:#3ccf7e;
+  --feature-bg:#f3f3f6; --feature-fg:#121216;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light}
+[data-mode="dark"]{color-scheme:dark}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--select);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:calc(1180px + 2 * var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--ground) 80%, transparent);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid color-mix(in srgb, var(--line) 70%, transparent)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:56px}
+.logo{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font:700 17px/1 var(--font-display);letter-spacing:-.01em}
+.logo:hover{text-decoration:none}
+.logo .pm-mark{width:24px;height:24px;flex:none}
+.pm-word{display:inline-flex;align-items:baseline;white-space:nowrap}
+.nsel{position:relative;display:inline-block;margin-left:.48em;color:var(--ink-2)}
+.nsel-box{position:absolute;inset:-2px -4px;border:1.5px solid var(--select);pointer-events:none}
+.nsel-box i{position:absolute;width:6px;height:6px;box-sizing:border-box;background:var(--paper);border:1.5px solid var(--select)}
+.nsel-box .tl{left:-4px;top:-4px}.nsel-box .tr{right:-4px;top:-4px}.nsel-box .bl{left:-4px;bottom:-4px}.nsel-box .br{right:-4px;bottom:-4px}
+.back{color:var(--ink-2);font-size:14px;font-weight:500}
+.back:hover{color:var(--ink);text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 22px;border-radius:999px;border:0;font:600 15px/1 var(--font-body);cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{text-decoration:none}
+.btn-primary{background:var(--select);color:var(--select-ink)}
+.btn-primary:hover{background:color-mix(in srgb, var(--select) 88%, var(--ink))}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.h1{margin:0;font:600 clamp(2.4rem, 1.4rem + 4vw, 4rem)/1.02 var(--font-display);letter-spacing:-.035em}
+.h1 b{font-weight:600}
+.h1 span{color:var(--ink-3)}
+.lede{margin:18px 0 0;font-size:clamp(17px, 1.2vw + 12px, 20px);color:var(--ink-2);max-width:46ch}
+.eyebrow{margin:0 0 10px;font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.mono{font-family:var(--font-mono)}
+.foot{padding-block:64px 40px}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.foot-in nav{display:flex;gap:20px}
+.foot-in a{color:var(--ink-2)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom, 0px));z-index:80;translate:-50% 16px;opacity:0;max-width:calc(100vw - 32px);background:var(--feature-bg);color:var(--feature-fg);padding:12px 18px;border-radius:14px;font-size:14px;box-shadow:0 22px 44px rgb(18 18 22 / .2);transition:opacity .25s, translate .25s;pointer-events:none}
+.toast.show{opacity:1;translate:-50% 0}
+@media (prefers-reduced-motion: reduce){ .toast{transition:none} }
+
+.hello{padding-block:clamp(40px, 7vw, 88px) 0}
+.ok-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;padding:6px 12px 6px 8px;border-radius:999px;background:color-mix(in srgb, var(--ok) 14%, transparent);color:var(--ok);font:600 13px/1 var(--font-body)}
+.ok-badge svg{width:18px;height:18px}
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:16px}
+.steps li{padding:22px 22px 24px;background:var(--paper);border-radius:20px;box-shadow:var(--shadow)}
+.steps .n{display:block;margin-bottom:14px;font:500 12px/1 var(--font-mono);color:var(--select)}
+.steps h2{margin:0 0 6px;font:600 19px/1.2 var(--font-display);letter-spacing:-.01em}
+.steps p{margin:0;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.intake{display:grid;grid-template-columns:minmax(0, 1fr) 300px;gap:24px;align-items:start;margin-top:40px}
+.card{background:var(--paper);border-radius:24px;box-shadow:var(--shadow)}
+form.card{padding:clamp(22px, 4vw, 40px)}
+.card h2{margin:0;font:600 26px/1.1 var(--font-display);letter-spacing:-.02em}
+.card .sub{margin:8px 0 26px;color:var(--ink-2);font-size:16px}
+.field{display:grid;gap:7px;margin-bottom:20px}
+.field > label,.field legend{font:600 14px/1.3 var(--font-body);color:var(--ink)}
+.field .hint{font-size:13px;color:var(--ink-3);font-weight:400}
+fieldset.field{border:0;margin:0 0 20px;padding:0}
+fieldset.field legend{padding:0;margin-bottom:7px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input[type=text],input[type=email],input[type=url],textarea{width:100%;font:16px/1.4 var(--font-body);color:var(--ink);background:var(--paper-2);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
+textarea{min-height:96px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--select);box-shadow:0 0 0 3px var(--select-soft)}
+input[type=file]{font:14px var(--font-body);color:var(--ink-2)}
+input[type=file]::file-selector-button{margin-right:12px;height:36px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);font:600 14px var(--font-body);cursor:pointer}
+.choice{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;font-size:15px}
+.choice input{accent-color:var(--select);width:18px;height:18px;margin:0}
+.choice:has(input:checked){border-color:var(--select);background:var(--select-soft)}
+.choices{display:grid;gap:10px}
+.send{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:8px}
+.send small{color:var(--ink-3);font-size:13px}
+.done{display:none;padding:28px 0 8px}
+.done h2{margin-bottom:8px}
+.done p{margin:0;color:var(--ink-2)}
+form.sent .q{display:none}
+form.sent .done{display:block}
+aside.card{padding:24px;position:sticky;top:80px}
+aside h2{margin:0 0 4px;font:600 18px/1.2 var(--font-display)}
+aside p{margin:0 0 16px;color:var(--ink-2);font-size:15px}
+aside ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+aside li a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:12px;background:var(--paper-2);color:var(--ink);font-size:15px;font-weight:500}
+aside li a:hover{text-decoration:none;background:var(--select-soft)}
+aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
+.host{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.host .av{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--select-soft);color:var(--select);font:700 14px/1 var(--font-display)}
+.host p{margin:0;font-size:14px;color:var(--ink-2)}
+.host b{display:block;color:var(--ink);font-weight:600}
+@media (max-width: 900px){ .steps{grid-template-columns:1fr} .intake{grid-template-columns:1fr} aside.card{position:static} }
+@media (max-width: 520px){ .two{grid-template-columns:1fr} }
+</style>
+<script>(function () { var m = 'dark'; try { m = localStorage.getItem('us-mode') || 'dark'; } catch (e) {} if (m !== 'light') document.documentElement.setAttribute('data-mode', 'dark'); })();</script>
+</head>
+<body>
+<header class="nav"><div class="nav-in wrap"><a class="logo" href="./" aria-label="Presetpro Design home"><svg class="pm-mark" viewBox="0 0 560 560" aria-hidden="true" focusable="false"><path fill-rule="evenodd" style="fill:var(--ink)" d="M8 280A272 272 0 1 0 552 280A272 272 0 1 0 8 280Z M151 200 H212 L241 171 Q245 166 251 166 H309 Q315 166 319 171 L348 200 H409 Q422 200 422 213 V358 Q422 371 409 371 H151 Q138 371 138 358 V213 Q138 200 151 200 Z M214 283A66 66 0 1 0 346 283A66 66 0 1 0 214 283Z"/></svg><span class="pm-word"><span>Presetpro</span><span class="nsel"><span>Design</span><span class="nsel-box" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></span></span></span></a><a class="back" href="./">Back to the site</a></div></header>
+<main>
+<section class="hello wrap">
+<p class="ok-badge"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M6 10.3l2.6 2.6L14 7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="paid">Payment received</span></p>
+<h1 class="h1"><b>You&#39;re in.</b> <span>Welcome to Presetpro Design.</span></h1>
+<p class="lede" data-design="Three quick steps, and your first request is on its way.">Three quick steps, and your first sprint is on its way.</p>
+<ol class="steps">
+<li><span class="n">01</span><h2>Tell us about the product</h2><p data-design="Five minutes with the form below. Add your first request.">Five minutes with the form below. Add what this sprint should do first.</p></li>
+<li><span class="n">02</span><h2>Get your board</h2><p data-design="We invite you to your private board within a day. Add requests there whenever you like.">We invite you to your private board within a day, with a two-week plan on it.</p></li>
+<li><span class="n">03</span><h2 data-design="Designs, one at a time">A build every week</h2><p data-design="We work through your requests one at a time, most within 48 hours.">Try a working build each week, and see a demo when the sprint ends.</p></li>
+</ol>
+<div class="intake">
+<form class="card" id="intake" novalidate>
+<input type="hidden" name="_subject" id="f-subject" value="Presetpro Design sprint intake">
+<input type="hidden" name="plan" id="f-plan" value="sprint">
+<input type="hidden" name="order" id="f-order" value="">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+<div class="q">
+<h2>About your product</h2>
+<p class="sub">Everything here goes straight to Tim. Skip anything you don&#39;t have yet.</p>
+<div class="field"><label for="f-brand">Product or company name</label><input id="f-brand" name="brand" type="text" autocomplete="organization" required></div>
+<div class="field"><label for="f-links">Website and links <span class="hint">Your app, your site or an app store page</span></label><input id="f-links" name="links" type="text" placeholder="yourapp.com"></div>
+<fieldset class="field"><legend>Who should be on the board? <span class="hint">Up to two people</span></legend>
+<div class="two"><input aria-label="First email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required><input aria-label="Second email" name="email2" type="email" placeholder="teammate@yourbrand.com"></div></fieldset>
+<div class="field"><label for="f-folder">Files <span class="hint">A link to designs, docs or your logo. You can also add files on your board.</span></label><input id="f-folder" name="folder" type="text" inputmode="url" placeholder="Google Drive, Dropbox or WeTransfer link"></div>
+<div class="field"><label for="f-words">Who uses it, and for what?</label><input id="f-words" name="users" type="text" placeholder="Our studio clients. They book a session and pay a deposit."></div>
+<div class="field"><label for="f-likes">Design you like, and why <span class="hint">Links to apps or sites you admire</span></label><textarea id="f-likes" name="likes"></textarea></div>
+<div class="field"><label for="f-first"><span data-design="What&#39;s your first request?">What should this sprint do first?</span> <span class="hint" data-design="What you need designed, and any deadline">The features, the fixes, and any deadline</span></label><textarea id="f-first" name="first" placeholder="Let clients pay the deposit when they book, and show us the week on one dashboard."></textarea></div>
+<fieldset class="field"><legend>Want a 30 minute kickoff call?</legend>
+<div class="choices"><label class="choice"><input type="radio" name="kickoff" value="yes" checked> <span data-design="Yes, let&#39;s talk it through">Yes, let&#39;s plan the sprint together</span></label>
+<label class="choice"><input type="radio" name="kickoff" value="no"> No, plan it on the board</label></div></fieldset>
+<div class="send"><button class="btn btn-primary" type="submit">Send to Tim</button><small id="send-note">Demo: on the live site this goes to contact@presetpro.com.</small></div>
+</div>
+<div class="done" role="status"><h2>Thanks. That&#39;s everything.</h2><p>Your board will be ready within a day. Watch for an invite from Trello at the email you gave.</p></div>
+</form>
+<aside class="card">
+<h2>Need anything?</h2>
+<p>Billing, pausing and calls, all in one place.</p>
+<ul>
+<li><a href="#" data-account data-demo="Demo only. This opens your FastSpring account page on the live site.">Billing and pausing <span>FastSpring</span></a></li>
+<li><a href="#" data-kickoff data-demo="Demo only. Booking isn&#39;t live yet.">Book a kickoff call <span>30 min</span></a></li>
+<li><a href="mailto:contact@presetpro.com">Email Tim <span>Reply in a day</span></a></li>
+</ul>
+<div class="host"><span class="av" aria-hidden="true">TM</span><p><b>Tim M.</b><span data-design="Founder. Every request comes to me, and I&#39;m your contact throughout.">Founder. Every sprint is planned with me, and I&#39;m your contact throughout.</span></p></div>
+</aside>
+</div>
+</section>
+</main>
+<footer class="foot wrap"><div class="foot-in"><span>© 2026 Presetpro INC. A Presetpro Design page.</span><nav aria-label="Footer"><a href="./">Home</a><a href="terms.html">Terms</a><a href="https://www.presetpro.com/privacy/">Privacy</a><a href="mailto:contact@presetpro.com">contact@presetpro.com</a></nav></div></footer>
+<div class="toast" role="status" aria-live="polite" hidden></div>
+<script>
+(() => {
+  const toastEl = document.querySelector('.toast');
+  let t1, t2;
+  const toast = msg => {
+    clearTimeout(t1); clearTimeout(t2);
+    toastEl.textContent = msg; toastEl.hidden = false;
+    requestAnimationFrame(() => toastEl.classList.add('show'));
+    t1 = setTimeout(() => { toastEl.classList.remove('show'); t2 = setTimeout(() => { toastEl.hidden = true; }, 300); }, 3400);
+  };
+  /* Live services. Empty values keep the demo; build_site.py fills this block from site-config.json. */
+  /* site-config:start */
+  const SITE = {"storefront": "", "products": {"sprint": "", "design": ""}, "booking": "https://calendar.app.google/g8PDB5tyFNbHMGoy7", "kickoff": "https://calendar.app.google/Z4VRL9P1HByzEE4J9", "account": "", "intake": "https://formspree.io/f/xbggywnk", "email": "contact@presetpro.com"};
+  /* site-config:end */
+  const link = (sel, url) => { if (url) document.querySelectorAll(sel).forEach(a => { a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.removeAttribute('data-demo'); }); };
+  link('[data-account]', SITE.account);
+  link('[data-book]', SITE.booking);
+  link('[data-kickoff]', SITE.kickoff || SITE.booking);
+  document.querySelectorAll('[data-demo]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); toast(el.dataset.demo); }));
+
+  /* FastSpring sends the client here with ?order=<order number> */
+  /* The design plan lands here with ?plan=design: swap the sprint wording for design wording. */
+  if (new URLSearchParams(location.search).get('plan') === 'design') {
+    document.querySelectorAll('[data-design]').forEach(el => { el.textContent = el.dataset.design; });
+    document.getElementById('f-plan').value = 'design';
+    document.getElementById('f-subject').value = 'Presetpro Design intake: design plan';
+    const f = document.getElementById('f-first'); if (f) f.placeholder = 'A landing page for our launch, then new screens for sign-up.';
+  }
+  const order = (new URLSearchParams(location.search).get('order') || '').replace(/[^A-Za-z0-9-]/g, '').slice(0, 40);
+  if (order) { document.getElementById('paid').textContent = 'Payment received · Order ' + order; document.getElementById('f-order').value = order; }
+  if (SITE.intake) document.getElementById('send-note').textContent = 'Goes straight to ' + SITE.email + '.';
+
+  const form = document.getElementById('intake');
+  const btn = form.querySelector('button[type=submit]');
+  const done = () => { form.classList.add('sent'); const d = form.querySelector('.done'); d.setAttribute('tabindex', '-1'); d.focus(); };
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const need = [...form.querySelectorAll('[required]')].find(el => !el.value.trim() || (el.type === 'email' && !el.checkValidity()));
+    if (need) { need.focus(); toast(need.type === 'email' ? 'Add an email for your board invite.' : 'Add your product name.'); return; }
+    if (!SITE.intake) { done(); return; }
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      const r = await fetch(SITE.intake, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      if (!r.ok) throw new Error(r.status);
+      done();
+    } catch (err) {
+      btn.disabled = false; btn.textContent = 'Send to Tim';
+      toast('That did not send. Please try again, or email ' + SITE.email + '.');
+    }
+  });
+})();
+</script>
+</body>
+</html>
