@@ -564,7 +564,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 @media (max-width: 600px){ .giant .lk-mark .lk-lg{display:none} .giant .lk-mark .lk-sm{display:block} }
 </style>
 <script>
-  (function () { var m = 'dark'; try { m = localStorage.getItem('us-mode') || 'dark'; } catch (e) {} if (m !== 'light') document.documentElement.setAttribute('data-mode', 'dark'); })();
+  (function () { var m = 'light'; try { m = localStorage.getItem('us-mode') || 'light'; } catch (e) {} if (m === 'dark') document.documentElement.setAttribute('data-mode', 'dark'); })();
 </script>
 
 <header class="nav">
