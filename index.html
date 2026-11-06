@@ -414,6 +414,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 .seg.seg-paper label{color:var(--ink-2)}
 .seg.seg-paper input:checked + label{background:var(--ink);color:var(--paper)}
 .launch.design-plan{margin:18px 0 0}
+.pricing + .launch{margin:18px 0 0}   /* Nov 6, 2026: monthly plan first, then Launch, then Custom */
 .design-plan .incl.launch-incl{margin-top:0}
 .plan .launch-tag{background:color-mix(in srgb, var(--select) 22%, transparent);color:var(--feature-fg)}
 .side-card .care-price{margin:2px 0 0;font:600 34px/1 var(--font-display);letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -721,7 +722,41 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 
   <section class="sec" id="pricing">
     <div class="wrap">
-      <div class="sec-head"><h2 class="h2"><b>Launch first.</b> <span>Then keep shipping, one request at a time.</span></h2></div>
+      <div class="sec-head"><h2 class="h2"><b>Pick how you work.</b> <span>A monthly plan, or one project with a set price.</span></h2></div>
+      <div class="pricing">
+        <article class="plan rise">
+          <span class="launch-tag">Monthly</span>
+          <div class="plan-top">
+            <h3 class="plan-name">Design and build</h3>
+          </div>
+          <p class="price"><span>$4,995</span><small>per month</small></p>
+          <p class="plan-line">Design and development on anything, one request at a time.</p>
+          <ul class="incl">
+            <li>Unlimited requests, one at a time</li>
+            <li>New features designed, built and shipped</li>
+            <li>App and web screens, landing pages and decks</li>
+            <li>AI features like search, summaries or chat</li>
+            <li>Most requests back in 48 hours</li>
+            <li>Bigger work in pieces, typically every 48 hours</li>
+            <li>Code, designs and accounts in your name</li>
+            <li>Pause or cancel at the end of any month</li>
+          </ul>
+          <div class="plan-cta">
+            <a class="btn btn-primary" href="#pricing" data-book data-demo="Demo only. Booking isn't live yet.">Book a call</a>
+          </div>
+        </article>
+        <div class="side">
+          <article class="side-card rise">
+            <h3>Every project</h3>
+            <ul class="promises">
+              <li><b>Set prices.</b> The monthly plan is one flat fee, and every project has a fixed price before we start.</li>
+              <li><b>You own everything.</b> The code, the database and the domain, in your name from day one.</li>
+              <li><b>Pause any month.</b> Stop at the end of any month, and pick up again when you're ready.</li>
+            </ul>
+            <p class="side-foot">iPhone apps on request. For apps we launched, Care covers hosting, backups and fixes within two business days, from $495 a month. <a href="#pricing" data-book data-demo="Demo only. Booking isn't live yet.">Ask on a call</a></p>
+          </article>
+        </div>
+      </div>
       <article class="launch rise" id="launch">
         <div class="launch-copy">
           <span class="launch-tag">Launch</span>
@@ -753,40 +788,29 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
           </ul>
         </div>
       </article>
-      <div class="pricing">
-        <article class="plan rise">
-          <span class="launch-tag">Monthly</span>
-          <div class="plan-top">
-            <h3 class="plan-name">Design and build</h3>
-          </div>
-          <p class="price"><span>$4,995</span><small>per month</small></p>
-          <p class="plan-line">Design and development on anything, one request at a time.</p>
-          <ul class="incl">
-            <li>Unlimited requests, one at a time</li>
-            <li>New features designed, built and shipped</li>
-            <li>App and web screens, landing pages and decks</li>
-            <li>AI features like search, summaries or chat</li>
-            <li>Most requests back in 48 hours</li>
-            <li>Bigger work in pieces, typically every 48 hours</li>
-            <li>Code, designs and accounts in your name</li>
-            <li>Pause or cancel at the end of any month</li>
-          </ul>
-          <div class="plan-cta">
+      <article class="launch design-plan rise" id="custom">
+        <div class="launch-copy">
+          <span class="launch-tag">Custom · one time</span>
+          <h3>A one-off project?</h3>
+          <p>A website, a WordPress build, a redesign, or anything with a clear finish line. We scope it with you on a call, then send one fixed quote.</p>
+          <p class="launch-price">Fixed price<small>quoted after a call</small></p>
+          <div class="launch-cta">
             <a class="btn btn-primary" href="#pricing" data-book data-demo="Demo only. Booking isn't live yet.">Book a call</a>
           </div>
-        </article>
-        <div class="side">
-          <article class="side-card rise">
-            <h3>Every project</h3>
-            <ul class="promises">
-              <li><b>Set prices.</b> Launch has a fixed price and a launch date, and the monthly plan is one flat fee.</li>
-              <li><b>You own everything.</b> The code, the database and the domain, in your name from day one.</li>
-              <li><b>Pause any month.</b> Stop at the end of any month, and pick up again when you're ready.</li>
-            </ul>
-            <p class="side-foot">Websites and other one-off projects: quoted after a call. iPhone apps on request. For apps we launched, Care covers hosting, backups and fixes within two business days, from $495 a month. <a href="#pricing" data-book data-demo="Demo only. Booking isn't live yet.">Ask on a call</a></p>
-          </article>
+          <p class="launch-note">Bigger projects: half to start, half on delivery.</p>
         </div>
-      </div>
+        <div>
+          <ul class="incl launch-incl">
+            <li>Websites in WordPress, Webflow or Framer</li>
+            <li>Landing pages and redesigns</li>
+            <li>Plugins and small tools</li>
+            <li>A one-page scope before we start</li>
+            <li>One fixed price, agreed up front</li>
+            <li>Code, designs and accounts in your name</li>
+            <li>30 days of fixes after delivery</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
