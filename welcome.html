@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Welcome · Presetpro Design</title>
-<meta name="description" content="Welcome to Presetpro Design: three steps to your first request, and the intake form.">
+<meta name="description" content="Welcome to Presetpro Design: three steps to get started, and the intake form.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 560 560%22 aria-hidden=%22true%22 focusable=%22false%22%3E%3Cpath fill-rule=%22evenodd%22 fill=%22%23121216%22 d=%22M8 280A272 272 0 1 0 552 280A272 272 0 1 0 8 280Z M151 200 H212 L241 171 Q245 166 251 166 H309 Q315 166 319 171 L348 200 H409 Q422 200 422 213 V358 Q422 371 409 371 H151 Q138 371 138 358 V213 Q138 200 151 200 Z M214 283A66 66 0 1 0 346 283A66 66 0 1 0 214 283Z%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,6 +93,7 @@ input[type=file]::file-selector-button{margin-right:12px;height:36px;padding:0 1
 .choice input{accent-color:var(--select);width:18px;height:18px;margin:0}
 .choice:has(input:checked){border-color:var(--select);background:var(--select-soft)}
 .choices{display:grid;gap:10px}
+.choices.row{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .send{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:8px}
 .send small{color:var(--ink-3);font-size:13px}
 .done{display:none;padding:28px 0 8px}
@@ -112,7 +113,7 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 .host p{margin:0;font-size:14px;color:var(--ink-2)}
 .host b{display:block;color:var(--ink);font-weight:600}
 @media (max-width: 900px){ .steps{grid-template-columns:1fr} .intake{grid-template-columns:1fr} aside.card{position:static} }
-@media (max-width: 520px){ .two{grid-template-columns:1fr} }
+@media (max-width: 520px){ .two{grid-template-columns:1fr} .choices.row{grid-template-columns:1fr} }
 </style>
 <script>(function () { var m = 'light'; try { m = localStorage.getItem('us-mode') || 'light'; } catch (e) {} if (m === 'dark') document.documentElement.setAttribute('data-mode', 'dark'); })();</script>
 </head>
@@ -122,21 +123,24 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 <section class="hello wrap">
 <p class="ok-badge"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="currentColor"/><path d="M6 10.3l2.6 2.6L14 7.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="paid">Payment received</span></p>
 <h1 class="h1"><b>You&#39;re in.</b> <span>Welcome to Presetpro Design.</span></h1>
-<p class="lede">Three quick steps, and your first request is on its way.</p>
+<p class="lede">Three quick steps, and we get to work.</p>
 <ol class="steps">
-<li><span class="n">01</span><h2>Tell us about the product</h2><p>Five minutes with the form below. Add your first request.</p></li>
-<li><span class="n">02</span><h2>Get your board</h2><p>We invite you to your private board within a day. Add requests there whenever you like.</p></li>
-<li><span class="n">03</span><h2>One request at a time</h2><p>We work through your requests in your order. Most come back within 48 hours.</p></li>
+<li><span class="n">01</span><h2>Tell us about the project</h2><p>Five minutes with the form below. Skip anything we covered on the call.</p></li>
+<li><span class="n">02</span><h2>Get your board</h2><p>We invite you to your private board within a day. You see every piece of work there, from requested to shipped.</p></li>
+<li><span class="n">03</span><h2>We get to work</h2><p>On the monthly plan, one request at a time, and most come back within 48 hours. Launch and custom projects follow the dates in your scope.</p></li>
 </ol>
 <div class="intake">
 <form class="card" id="intake" novalidate>
 <input type="hidden" name="_subject" id="f-subject" value="Presetpro Design intake">
-<input type="hidden" name="plan" id="f-plan" value="monthly">
 <input type="hidden" name="order" id="f-order" value="">
 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 <div class="q">
-<h2>About your product</h2>
+<h2>About your project</h2>
 <p class="sub">Everything here goes straight to Tim. Skip anything you don&#39;t have yet.</p>
+<fieldset class="field"><legend>What did you start?</legend>
+<div class="choices row"><label class="choice"><input type="radio" name="plan" value="monthly"> Monthly plan</label>
+<label class="choice"><input type="radio" name="plan" value="launch"> Launch</label>
+<label class="choice"><input type="radio" name="plan" value="custom"> Custom project</label></div></fieldset>
 <div class="field"><label for="f-brand">Product or company name</label><input id="f-brand" name="brand" type="text" autocomplete="organization" required></div>
 <div class="field"><label for="f-links">Website and links <span class="hint">Your app, your site or an app store page</span></label><input id="f-links" name="links" type="text" placeholder="yourapp.com"></div>
 <fieldset class="field"><legend>Who should be on the board? <span class="hint">Up to two people</span></legend>
@@ -144,7 +148,7 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 <div class="field"><label for="f-folder">Files <span class="hint">A link to designs, docs or your logo. You can also add files on your board.</span></label><input id="f-folder" name="folder" type="text" inputmode="url" placeholder="Google Drive, Dropbox or WeTransfer link"></div>
 <div class="field"><label for="f-words">Who uses it, and for what?</label><input id="f-words" name="users" type="text" placeholder="Our studio clients. They book a session and pay a deposit."></div>
 <div class="field"><label for="f-likes">Design you like, and why <span class="hint">Links to apps or sites you admire</span></label><textarea id="f-likes" name="likes"></textarea></div>
-<div class="field"><label for="f-first">What&#39;s your first request? <span class="hint">What you need designed or built, and any deadline</span></label><textarea id="f-first" name="first" placeholder="Let clients pay the deposit when they book, and show us the week on one dashboard."></textarea></div>
+<div class="field"><label for="f-first">What should we start with? <span class="hint">What you need first, and any deadline</span></label><textarea id="f-first" name="first" placeholder="Let clients pay the deposit when they book, and show us the week on one dashboard."></textarea></div>
 <fieldset class="field"><legend>Want a 30 minute kickoff call?</legend>
 <div class="choices"><label class="choice"><input type="radio" name="kickoff" value="yes" checked> Yes, let&#39;s talk it through</label>
 <label class="choice"><input type="radio" name="kickoff" value="no"> No, plan it on the board</label></div></fieldset>
@@ -154,9 +158,9 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 </form>
 <aside class="card">
 <h2>Need anything?</h2>
-<p>Billing, pausing and calls, all in one place.</p>
+<p>Billing, calls and questions, all in one place.</p>
 <ul>
-<li><a href="#" data-account data-demo="Demo only. This opens your FastSpring account page on the live site.">Billing and pausing <span>FastSpring</span></a></li>
+<li><a href="#" data-account data-demo="Demo only. This opens your FastSpring account page on the live site.">Billing and receipts <span>FastSpring</span></a></li>
 <li><a href="#" data-kickoff data-demo="Demo only. Booking isn&#39;t live yet.">Book a kickoff call <span>30 min</span></a></li>
 <li><a href="mailto:contact@presetpro.com">Email Tim <span>Reply in a day</span></a></li>
 </ul>
@@ -194,11 +198,16 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 
   const form = document.getElementById('intake');
   const btn = form.querySelector('button[type=submit]');
+  /* What they started: ?plan=monthly|launch|custom preselects it (optional), and it goes in the email subject */
+  const plan = (new URLSearchParams(location.search).get('plan') || '').toLowerCase();
+  if (['monthly', 'launch', 'custom'].includes(plan)) form.querySelector('input[name=plan][value=' + plan + ']').checked = true;
+  const setSubject = () => { const p = form.querySelector('input[name=plan]:checked'); document.getElementById('f-subject').value = 'Presetpro Design intake' + (p ? ' · ' + p.parentElement.textContent.trim() : ''); };
   const done = () => { form.classList.add('sent'); const d = form.querySelector('.done'); d.setAttribute('tabindex', '-1'); d.focus(); };
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const need = [...form.querySelectorAll('[required]')].find(el => !el.value.trim() || (el.type === 'email' && !el.checkValidity()));
-    if (need) { need.focus(); toast(need.type === 'email' ? 'Add an email for your board invite.' : 'Add your product name.'); return; }
+    if (need) { need.focus(); toast(need.type === 'email' ? 'Add an email for your board invite.' : 'Add your product or company name.'); return; }
+    setSubject();
     if (!SITE.intake) { done(); return; }
     btn.disabled = true; btn.textContent = 'Sending...';
     try {
