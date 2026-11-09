@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stockpresets case study · Presetpro Design</title>
+<meta name="description" content="How we rebuilt the Stockpresets store in about a week: 88 products in four apps, try before you buy, a yearly plan, and 386 old links sent to their new page.">
+<link rel="canonical" href="https://design.presetpro.com/work-stockpresets.html">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 560 560%22 aria-hidden=%22true%22 focusable=%22false%22%3E%3Cpath fill-rule=%22evenodd%22 fill=%22%23121216%22 d=%22M8 280A272 272 0 1 0 552 280A272 272 0 1 0 8 280Z M151 200 H212 L241 171 Q245 166 251 166 H309 Q315 166 319 171 L348 200 H409 Q422 200 422 213 V358 Q422 371 409 371 H151 Q138 371 138 358 V213 Q138 200 151 200 Z M214 283A66 66 0 1 0 346 283A66 66 0 1 0 214 283Z%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700;800&family=Funnel+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#f2f2f4; --paper:#ffffff; --paper-2:#f6f6f8; --ink:#121216; --ink-2:#6b6b74; --ink-3:#9b9ba4;
+  --line:#e2e2e8; --select:#1a6dff; --select-ink:#ffffff; --select-soft:#e7efff; --ok:#17955a;
+  --feature-bg:#121216; --feature-fg:#f5f5f7;
+  --shadow:0 1px 2px rgb(18 18 22 / .05), 0 10px 30px rgb(18 18 22 / .07);
+  --font-display:"Funnel Display", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:"Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:"Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --gutter:clamp(16px, 4vw, 40px);
+}
+[data-mode="dark"]{
+  --ground:#0b0b0d; --paper:#17171b; --paper-2:#111114; --ink:#f3f3f6; --ink-2:#a2a2ac; --ink-3:#6e6e78;
+  --line:#2a2a31; --select:#4a8bff; --select-ink:#ffffff; --select-soft:#14233f; --ok:#3ccf7e;
+  --feature-bg:#f3f3f6; --feature-fg:#121216;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:light}
+[data-mode="dark"]{color-scheme:dark}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--select);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:calc(1180px + 2 * var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--ground) 80%, transparent);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid color-mix(in srgb, var(--line) 70%, transparent)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:56px}
+.logo{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font:700 17px/1 var(--font-display);letter-spacing:-.01em}
+.logo:hover{text-decoration:none}
+.logo .pm-mark{width:24px;height:24px;flex:none}
+.pm-word{display:inline-flex;align-items:baseline;white-space:nowrap}
+.nsel{position:relative;display:inline-block;margin-left:.48em;color:var(--ink-2)}
+.nsel-box{position:absolute;inset:-2px -4px;border:1.5px solid var(--select);pointer-events:none}
+.nsel-box i{position:absolute;width:6px;height:6px;box-sizing:border-box;background:var(--paper);border:1.5px solid var(--select)}
+.nsel-box .tl{left:-4px;top:-4px}.nsel-box .tr{right:-4px;top:-4px}.nsel-box .bl{left:-4px;bottom:-4px}.nsel-box .br{right:-4px;bottom:-4px}
+.back{color:var(--ink-2);font-size:14px;font-weight:500}
+.back:hover{color:var(--ink);text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 22px;border-radius:999px;border:0;font:600 15px/1 var(--font-body);cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{text-decoration:none}
+.btn-primary{background:var(--select);color:var(--select-ink)}
+.btn-primary:hover{background:color-mix(in srgb, var(--select) 88%, var(--ink))}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.h1{margin:0;font:600 clamp(2.4rem, 1.4rem + 4vw, 4rem)/1.02 var(--font-display);letter-spacing:-.035em}
+.h1 b{font-weight:600}
+.h1 span{color:var(--ink-3)}
+.lede{margin:18px 0 0;font-size:clamp(17px, 1.2vw + 12px, 20px);color:var(--ink-2);max-width:46ch}
+.eyebrow{margin:0 0 10px;font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.mono{font-family:var(--font-mono)}
+.foot{padding-block:64px 40px}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.foot-in nav{display:flex;gap:20px}
+.foot-in a{color:var(--ink-2)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom, 0px));z-index:80;translate:-50% 16px;opacity:0;max-width:calc(100vw - 32px);background:var(--feature-bg);color:var(--feature-fg);padding:12px 18px;border-radius:14px;font-size:14px;box-shadow:0 22px 44px rgb(18 18 22 / .2);transition:opacity .25s, translate .25s;pointer-events:none}
+.toast.show{opacity:1;translate:-50% 0}
+@media (prefers-reduced-motion: reduce){ .toast{transition:none} }
+
+.case{max-width:880px;margin-inline:auto;padding-block:clamp(40px, 7vw, 88px) 0}
+.case .lede{max-width:56ch}
+.stats{display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:12px;margin:40px 0 0}
+.stat{background:var(--paper);border-radius:20px;box-shadow:var(--shadow);padding:20px 20px 18px}
+.stat b{display:block;font:600 clamp(26px, 1.6vw + 18px, 38px)/1 var(--font-display);letter-spacing:-.03em;color:var(--ink)}
+.stat span{display:block;margin-top:10px;font-size:15px;line-height:1.35;color:var(--ink)}
+.stat small{display:block;margin-top:6px;font:500 12px/1.4 var(--font-mono);color:var(--ink-3)}
+.bars{margin:16px 0 0;padding:24px 26px;background:var(--paper);border-radius:20px;box-shadow:var(--shadow);display:grid;gap:20px}
+.bar-group h3{margin:0 0 10px;font:600 15px/1.2 var(--font-body)}
+.bar-row{display:grid;grid-template-columns:64px 1fr 56px;gap:12px;align-items:center;font-size:14px;color:var(--ink-2)}
+.bar-row + .bar-row{margin-top:8px}
+.bar{height:12px;border-radius:999px;background:var(--paper-2);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line)}
+.bar i{display:block;height:100%;border-radius:999px;background:var(--ink-3)}
+.bar-row.after .bar i{background:var(--select)}
+.bar-row.after{color:var(--ink);font-weight:600}
+.bar-row b{font:500 13px/1 var(--font-mono);text-align:right}
+.case section{padding-top:48px}
+.case h2{margin:0 0 14px;font:600 26px/1.15 var(--font-display);letter-spacing:-.02em}
+.case p,.case li{color:var(--ink-2)}
+.case p{margin:0 0 12px}
+.case ul{margin:0;padding-left:20px;display:grid;gap:10px}
+.case strong{color:var(--ink);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+.chips span{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);font:500 13px/1 var(--font-mono);color:var(--ink-2)}
+.fine{margin:14px 0 0;font:500 12px/1.5 var(--font-mono);color:var(--ink-3)}
+.live{font-weight:500}
+.cta{margin-top:56px;padding:32px clamp(22px, 4vw, 40px);border-radius:24px;background:var(--feature-bg);color:var(--feature-fg);display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between}
+.cta h2{margin:0;color:inherit;font:600 26px/1.15 var(--font-display);letter-spacing:-.02em}
+.cta p{margin:8px 0 0;color:color-mix(in srgb, var(--feature-fg) 70%, transparent);max-width:44ch}
+@media (max-width: 720px){ .stats{grid-template-columns:repeat(2, minmax(0, 1fr))} .bar-row{grid-template-columns:52px 1fr 48px} }
+
+.shot{margin:40px 0 0}
+.shot .frame{border-radius:16px;overflow:hidden;background:var(--paper);box-shadow:var(--shadow);border:1px solid var(--line)}
+.shot .chrome{display:flex;gap:6px;align-items:center;height:30px;padding:0 12px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.shot .chrome i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.shot .chrome span{margin-left:10px;font:500 12px/1 var(--font-mono);color:var(--ink-3)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{margin-top:10px;font-size:14px;color:var(--ink-3)}
+</style>
+<script>(function () { var m = 'light'; try { m = localStorage.getItem('us-mode') || 'light'; } catch (e) {} if (m === 'dark') document.documentElement.setAttribute('data-mode', 'dark'); })();</script>
+</head>
+<body>
+<header class="nav"><div class="nav-in wrap"><a class="logo" href="./" aria-label="Presetpro Design home"><svg class="pm-mark" viewBox="0 0 560 560" aria-hidden="true" focusable="false"><path fill-rule="evenodd" style="fill:var(--ink)" d="M8 280A272 272 0 1 0 552 280A272 272 0 1 0 8 280Z M151 200 H212 L241 171 Q245 166 251 166 H309 Q315 166 319 171 L348 200 H409 Q422 200 422 213 V358 Q422 371 409 371 H151 Q138 371 138 358 V213 Q138 200 151 200 Z M214 283A66 66 0 1 0 346 283A66 66 0 1 0 214 283Z"/></svg><span class="pm-word"><span>Presetpro</span><span class="nsel"><span>Design</span><span class="nsel-box" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></span></span></span></a><a class="back" href="./">Back to the site</a></div></header>
+<main>
+<div class="wrap"><article class="case">
+<p class="eyebrow">Case study</p>
+<h1 class="h1"><b>Stockpresets.</b> <span>A new store in about a week.</span></h1>
+<p class="lede">Stockpresets is our own store for film looks. We rebuilt it from the ground up: a new design, every film for four apps, a way to try each look before you buy, and one yearly plan for everything. Links from Google and other sites still lead to the right pages.</p>
+<figure class="shot"><div class="frame"><div class="chrome"><i></i><i></i><i></i><span>stockpresets.com</span></div><img src="work-img/case-sp-home.webp" width="1600" height="1000" alt="The Stockpresets home page: a search bar, shelves of film looks for Lightroom and Cinematic collections, and a Get All Access button" loading="lazy"></div><figcaption>The home page: search first, then a shelf for every app.</figcaption></figure>
+<div class="stats"><div class="stat"><b>6 days</b><span>Plan to live</span><small>October 29 to November 4</small></div><div class="stat"><b>88</b><span>Products, each with its own page</span><small>22 collections in four apps</small></div><div class="stat"><b>386</b><span>Old links sent to their new page</span><small>474 old addresses checked, 0 wrong</small></div><div class="stat"><b>Same day</b><span>New collections, approved to live</span><small>the last four in a row</small></div></div>
+<section><h2>What we made</h2><ul>
+<li><strong>A store built around search.</strong> Every film comes in four versions, for Lightroom, Capture One, Luminar and as LUTs. Shoppers search, filter by look and film type, or browse a shelf for their app.</li>
+<li><strong>Try before you buy.</strong> Every product page shows the looks on real photos, with a before and after slider, so people see exactly what they get.</li>
+<li><strong>One yearly plan for everything.</strong> All Access unlocks every collection for $149 a year, with a library page where members find their downloads.</li>
+<li><strong>A theme of our own.</strong> The whole site now shares the store&#39;s design, in place of a paid theme and its page builder. Not one page had to be edited for the switch.</li>
+<li><strong>Nothing lost in the move.</strong> Every old address was mapped to its new page, old products were archived rather than deleted, and past buyers keep their downloads.</li>
+</ul></section>
+<figure class="shot"><div class="frame"><div class="chrome"><i></i><i></i><i></i><span>stockpresets.com/product/cinematic-romance-lightroom-presets</span></div><img src="work-img/case-sp-product.webp" width="1600" height="1000" alt="The Cinematic Romance product page: a before and after slider on a beach photo, look and strength buttons, and a $29 Buy now button" loading="lazy"></div><figcaption>Every product page lets you try each look, at every strength, before you buy.</figcaption></figure>
+<section><h2>How we built it</h2>
+<p>We rebuilt the store beside the live site, on a private copy. Every page and every old address was checked there first, then the new store went live in one step, with a backup ready. Paid plugins gave way to small plugins of our own for the store, checkout, downloads and the cookie notice.</p>
+<p>New collections are now added as data, not code. The last four went live the same day they were approved.</p>
+<div class="chips"><span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>JavaScript</span><span>FastSpring</span><span>Cloudflare R2</span></div>
+<a class="live" href="https://www.stockpresets.com/" target="_blank" rel="noopener">See it live on stockpresets.com ↗</a>
+</section>
+<div class="cta"><div><h2>Want a store like this?</h2><p>Tell us about your site and what it should sell. The first call is free and takes 30 minutes.</p></div>
+<a class="btn btn-primary" href="https://calendar.app.google/g8PDB5tyFNbHMGoy7" target="_blank" rel="noopener">Book a scoping call</a></div>
+</article></div>
+</main>
+<footer class="foot wrap"><div class="foot-in"><span>© 2026 Presetpro INC. A Presetpro Design page.</span><nav aria-label="Footer"><a href="./">Home</a><a href="terms.html">Terms</a><a href="https://www.presetpro.com/privacy/">Privacy</a><a href="mailto:contact@presetpro.com">contact@presetpro.com</a></nav></div></footer>
+<div class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
