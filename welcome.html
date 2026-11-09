@@ -93,7 +93,7 @@ input[type=file]::file-selector-button{margin-right:12px;height:36px;padding:0 1
 .choice input{accent-color:var(--select);width:18px;height:18px;margin:0}
 .choice:has(input:checked){border-color:var(--select);background:var(--select-soft)}
 .choices{display:grid;gap:10px}
-.choices.row{grid-template-columns:repeat(3, minmax(0, 1fr))}
+.choices.row{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .send{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:8px}
 .send small{color:var(--ink-3);font-size:13px}
 .done{display:none;padding:28px 0 8px}
@@ -127,7 +127,7 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 <ol class="steps">
 <li><span class="n">01</span><h2>Tell us about the project</h2><p>Five minutes with the form below. Skip anything we covered on the call.</p></li>
 <li><span class="n">02</span><h2>Get your board</h2><p>We invite you to your private board within a day. You see every piece of work there, from requested to shipped.</p></li>
-<li><span class="n">03</span><h2>We get to work</h2><p>On the monthly plan, one request at a time, and most come back within 48 hours. Launch and custom projects follow the dates in your scope.</p></li>
+<li><span class="n">03</span><h2>We get to work</h2><p>On the monthly plan, one request at a time, and most come back within 48 hours. Custom projects follow the dates in your scope.</p></li>
 </ol>
 <div class="intake">
 <form class="card" id="intake" novalidate>
@@ -139,7 +139,6 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 <p class="sub">Everything here goes straight to Tim. Skip anything you don&#39;t have yet.</p>
 <fieldset class="field"><legend>What did you start?</legend>
 <div class="choices row"><label class="choice"><input type="radio" name="plan" value="monthly"> Monthly plan</label>
-<label class="choice"><input type="radio" name="plan" value="launch"> Launch</label>
 <label class="choice"><input type="radio" name="plan" value="custom"> Custom project</label></div></fieldset>
 <div class="field"><label for="f-brand">Product or company name</label><input id="f-brand" name="brand" type="text" autocomplete="organization" required></div>
 <div class="field"><label for="f-links">Website and links <span class="hint">Your app, your site or an app store page</span></label><input id="f-links" name="links" type="text" placeholder="yourapp.com"></div>
@@ -198,9 +197,10 @@ aside li a span{color:var(--ink-3);font-size:13px;font-weight:400}
 
   const form = document.getElementById('intake');
   const btn = form.querySelector('button[type=submit]');
-  /* What they started: ?plan=monthly|launch|custom preselects it (optional), and it goes in the email subject */
-  const plan = (new URLSearchParams(location.search).get('plan') || '').toLowerCase();
-  if (['monthly', 'launch', 'custom'].includes(plan)) form.querySelector('input[name=plan][value=' + plan + ']').checked = true;
+  /* What they started: ?plan=monthly|custom preselects it (optional), and it goes in the email subject; Launch retired Nov 9, 2026, so an old ?plan=launch link picks Custom */
+  let plan = (new URLSearchParams(location.search).get('plan') || '').toLowerCase();
+  if (plan === 'launch') plan = 'custom';
+  if (['monthly', 'custom'].includes(plan)) form.querySelector('input[name=plan][value=' + plan + ']').checked = true;
   const setSubject = () => { const p = form.querySelector('input[name=plan]:checked'); document.getElementById('f-subject').value = 'Presetpro Design intake' + (p ? ' · ' + p.parentElement.textContent.trim() : ''); };
   const done = () => { form.classList.add('sent'); const d = form.querySelector('.done'); d.setAttribute('tabindex', '-1'); d.focus(); };
   form.addEventListener('submit', async e => {

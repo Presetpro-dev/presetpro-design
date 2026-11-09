@@ -414,7 +414,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 .seg.seg-paper label{color:var(--ink-2)}
 .seg.seg-paper input:checked + label{background:var(--ink);color:var(--paper)}
 .launch.design-plan{margin:18px 0 0}
-.pricing + .launch{margin:18px 0 0}   /* Nov 6, 2026: monthly plan first, then Launch, then Custom */
+.pricing + .launch{margin:18px 0 0}   /* Nov 9, 2026: monthly plan first, then Custom (Launch retired) */
 .design-plan .incl.launch-incl{margin-top:0}
 .plan .launch-tag{background:color-mix(in srgb, var(--select) 22%, transparent);color:var(--feature-fg)}
 .side-card .care-price{margin:2px 0 0;font:600 34px/1 var(--font-display);letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -757,42 +757,11 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
           </article>
         </div>
       </div>
-      <article class="launch rise" id="launch">
-        <div class="launch-copy">
-          <span class="launch-tag">Launch</span>
-          <h3>A working web app in two weeks.</h3>
-          <p>A first version of your app or internal tool, scoped with you on one page, then designed, built and put live on your domain. It does the main job well, so people can start using it while we plan what's next.</p>
-          <p class="launch-price">$12,000<small>one time</small></p>
-          <div class="launch-cta">
-            <a class="btn btn-primary" href="#pricing" data-book data-demo="Demo only. Booking isn't live yet.">Book a scoping call</a>
-          </div>
-          <p class="launch-note">After launch, keep building on the monthly plan.</p>
-        </div>
-        <div>
-          <ol class="lsteps" aria-label="Two weeks, from scoping to live">
-            <li><b>Day 1</b><span>Scope</span></li>
-            <li><b>Day 3</b><span>Design</span></li>
-            <li><b>Day 5</b><span>Build</span></li>
-            <li><b>Day 14</b><span>Live</span></li>
-          </ol>
-          <ul class="incl launch-incl">
-            <li>Sign-in with roles for your team</li>
-            <li>Up to six screens, designed and built</li>
-            <li>Your existing data brought in</li>
-            <li>Notifications and a simple dashboard</li>
-            <li>One connection to a tool you already use</li>
-            <li>Works on phones and desktop</li>
-            <li>Live on your own domain</li>
-            <li>Code and accounts in your name</li>
-            <li>30 days of fixes after launch</li>
-          </ul>
-        </div>
-      </article>
       <article class="launch design-plan rise" id="custom">
         <div class="launch-copy">
           <span class="launch-tag">Custom · one time</span>
           <h3>A one-off project?</h3>
-          <p>A website, a WordPress build, a redesign, or anything with a clear finish line. We scope it with you on a call, then send one fixed quote.</p>
+          <p>A website, a WordPress build, a redesign, a new web app, or anything with a clear finish line. We scope it with you on a call, then send one fixed quote.</p>
           <p class="launch-price">Fixed price<small>quoted after a call</small></p>
           <div class="launch-cta">
             <a class="btn btn-primary" href="#pricing" data-book data-demo="Demo only. Booking isn't live yet.">Book a call</a>
@@ -803,6 +772,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
           <ul class="incl launch-incl">
             <li>Websites in WordPress, Webflow or Framer</li>
             <li>Landing pages and redesigns</li>
+            <li>New web apps and internal tools</li>
             <li>Plugins and small tools</li>
             <li>A one-page scope before we start</li>
             <li>One fixed price, agreed up front</li>
@@ -819,14 +789,13 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
       <div><h2 class="h2"><b>Questions.</b> <span>Straight answers before you sign up.</span></h2></div>
       <div class="faq">
         <details name="faq" open><summary>What do you build?</summary><p>Web apps, websites and the design for all of it: screens and flows, new features, landing pages and decks, WordPress sites and plugins, and AI features like search, summaries or chat. iPhone apps on request.</p></details>
-        <details name="faq"><summary>Which option is right for me?</summary><p>Most clients start with the monthly plan: design and development on anything, one request at a time. If you need a new app from scratch, Launch builds a working first version in two weeks for a fixed price. For work with a clear finish line, like a WordPress site, we quote it as a custom project. Not sure? Book a free call and we&#39;ll tell you.</p></details>
+        <details name="faq"><summary>Which option is right for me?</summary><p>Most clients start with the monthly plan: design and development on anything, one request at a time. For work with a clear finish line, like a WordPress site or a new web app, we quote it as a custom project. Not sure? Book a free call and we&#39;ll tell you.</p></details>
         <details name="faq"><summary>How does the monthly plan work?</summary><p>Add requests to your board, as many as you like, and we work through them one at a time in the order you set. Most come back within 48 hours. Bigger work, like a new feature, is split into pieces, and you typically see an update every 48 hours. Design, development, fixes and AI features are all included. Pause or cancel at the end of any month.</p></details>
-        <details name="faq"><summary>What do I get with Launch?</summary><p>A working web app in about two weeks that does its main job well: sign-in with roles, up to six screens, your existing data, notifications, a simple dashboard and one connection to a tool you already use, live on your own domain. Anything bigger is planned on day one and built on the monthly plan after launch.</p></details>
-        <details name="faq"><summary>How do custom projects work?</summary><p>Tell us about it on a call, and we send one fixed quote based on the scope: a website, a WordPress build, a redesign or a plugin. Bigger projects are paid half at the start and half on delivery, and you get 30 days of fixes after delivery.</p></details>
+        <details name="faq"><summary>How do custom projects work?</summary><p>Tell us about it on a call, and we send one fixed quote based on the scope: a website, a WordPress build, a redesign, a plugin or a new web app. Bigger projects are paid half at the start and half on delivery, and you get 30 days of fixes after delivery.</p></details>
         <details name="faq"><summary>Who will I work with?</summary><p>The founder, Tim M., plans every project with you and stays your contact throughout. Developers we trust may join larger builds, and everything still runs through him.</p></details>
-        <details name="faq"><summary>Who owns the work?</summary><p>You do. It&#39;s built in your own accounts for the code, the database and the hosting, so nothing is locked to us. Launch and custom projects end with a short guide, a walkthrough video and 30 days of fixes.</p></details>
-        <details name="faq"><summary>How do I pay?</summary><p>After a short call, we send you a secure link to pay. The monthly plan renews on its own until you pause or cancel. Launch and bigger custom projects are paid half at the start and half on delivery.</p></details>
-        <details name="faq"><summary>Can I get a refund?</summary><p>A month of the plan isn&#39;t refunded once it starts, because you can cancel at the end of any month. Launch and custom projects have a fixed price agreed before we start. If something isn&#39;t working, tell us and we&#39;ll make it right.</p></details>
+        <details name="faq"><summary>Who owns the work?</summary><p>You do. It&#39;s built in your own accounts for the code, the database and the hosting, so nothing is locked to us. Custom projects end with a short guide, a walkthrough video and 30 days of fixes.</p></details>
+        <details name="faq"><summary>How do I pay?</summary><p>After a short call, we send you a secure link to pay. The monthly plan renews on its own until you pause or cancel. Bigger custom projects are paid half at the start and half on delivery.</p></details>
+        <details name="faq"><summary>Can I get a refund?</summary><p>A month of the plan isn&#39;t refunded once it starts, because you can cancel at the end of any month. Custom projects have a fixed price agreed before we start. If something isn&#39;t working, tell us and we&#39;ll make it right.</p></details>
       </div>
     </div>
   </section>
